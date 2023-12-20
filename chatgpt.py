@@ -174,7 +174,7 @@ async def chat(bot, message):
             x=resp['choices'][0]["message"]["content"]
             end_time = time.time()
             telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ᴍs"
-            await message.reply_text(f"{message.from_user.first_name} \n\n {a} \n\n :-\n\n {x}\n\n:
+            await message.reply_text(f"{message.from_user.first_name} :\n\n {a} \n\n:-\n\n {x}\n\n ", parse_mode=ParseMode.MARKDOWN,reply_markup=InlineKeyboardMarkup(X))
         await message.reply_text(f"**ᴇʀʀᴏʀ: {e} ")
 
 #  bard 
