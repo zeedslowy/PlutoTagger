@@ -45,42 +45,42 @@ x=["❤️","🎉","✨","🪸","🎉","🎈","🎯"]
 g=choice(x)
 MAIN = [
     [
-        InlineKeyboardButton(text="ᴅᴇᴠᴇʟᴏᴘᴇʀ", url=f"https://t.me/{OWNER_USERNAME}")
+        InlineKeyboardButton(text="sᴀʜɪᴘ", url=f"https://t.me/{OWNER_USERNAME}")
     ],
     [
         InlineKeyboardButton(
-            text="ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ",
+            text="ʙᴇɴɪ ɢʀᴜʙᴀ ᴇᴋʟᴇ",
             url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
         ),
     ],
     [
-        InlineKeyboardButton(text="ʜᴇʟᴘ & ᴄᴍᴅs ", callback_data="HELP"),
+        InlineKeyboardButton(text="ʏᴀʀᴅıᴍ & ᴋᴏᴍᴜᴛʟᴀʀ ", callback_data="HELP"),
     ],
 ]
 X = [
     [
-        InlineKeyboardButton(text=" ꜱᴜᴘᴘᴏʀᴛ ", url=f"https://t.me/{SUPPORT_GRP}"),
+        InlineKeyboardButton(text=" ᴅᴇsᴛᴇᴋ ", url=f"https://t.me/{SUPPORT_GRP}"),
     ]
     ]
     
 PNG_BTN = [
     [
          InlineKeyboardButton(
-             text="ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ",
+             text="ʙᴇɴɪ ɢʀᴜʙᴀ ᴇᴋʟᴇ",
              url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
          ),
      ],
      [
-         InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", 
+         InlineKeyboardButton(text="ᴅᴇsᴛᴇᴋ", 
                               url=f"https://t.me/{SUPPORT_GRP}",
          ),
      ],
 ]
 SOURCE_BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton('sᴏᴜʀᴄᴇ', url=f"{SOURCE}")]])
-HELP_READ = "**➻ ᴜsᴀɢᴇ** /chatgpt <prompt>\n\n ᴇxᴀᴍᴘʟᴇ: `/chatgpt write a simple flask app in python.`\n\n**➻ ᴜsᴀɢᴇ** : /generate <prompt> \nᴇxᴀᴍᴘʟᴇ: `/generate a cute girl photo`  \n\n➻ ᴜsᴀɢᴇ /lyrics : ʀᴇᴘʟʏ ᴛᴏ ᴀᴜᴅɪᴏ ꜰɪʟᴇ ᴛᴏ ᴅᴇᴛᴇᴄᴛ ʟʏʀɪᴄꜱ**➻ ᴜsᴀɢᴇ /ping ᴛᴏ ᴄʜᴇᴄᴋ ᴛʜᴇ ᴘɪɴɢ ᴏғ ᴛʜᴇ ʙᴏᴛ.**\n\n©️ @mr_sukkun**"
+HELP_READ = "**➻ 𝗞𝘂𝗹𝗹𝗮𝗻ı𝗺** /ask <prompt>\n\n  𝗥ü𝘆𝗮𝗻ı𝘇 : `/ask.`\n\n**➻ ᴜsᴀɢᴇ** : /generate <prompt> \nÖ𝗿𝗻𝗲𝗸: `/generate Tumblr Girls Love`  \n\n➻ :**➻ ᴜsᴀɢᴇ /ping 𝗕𝗼𝘁𝘂𝗻 𝗦𝗮𝗴𝗹ı𝗸 𝗦𝗼𝗿𝘂𝗻𝗹𝗮𝗿ı𝗻ı Ö𝗹çü𝗻.**\n\n©️**"
 HELP_BACK = [
      [
-           InlineKeyboardButton(text="Qᴜᴇꜱᴛɪᴏɴ ᴛʜᴀᴛ ᴄʜᴀᴛɢᴘᴛ ᴄᴀɴ ꜱᴏʟᴠᴇ ", url=f"https://t.me/mr_sukkun/528"),
+           InlineKeyboardButton(text="sᴀʜɪᴘ ", url=f"https://t.me/CerennyFlexQ"),
            
      ],
     [
@@ -96,7 +96,7 @@ async def start(client, m: Message):
         accha = await m.reply_text(
                         text = f"{g}")
         await asyncio.sleep(0.2)
-        await accha.edit("ᴘɪɴɢ ᴘᴏɴɢ ꜱᴛᴀʀᴛɪɴɢ..")
+        await accha.edit("✦ Yᴜ̈ᴋʟᴇɴɪʏᴏʀ..")
         await asyncio.sleep(0.2)
         await accha.delete()
         umm = await m.reply_sticker(
@@ -141,7 +141,7 @@ async def ping(client, message: Message):
         t = "ριиgιиg..."
         txxt = await message.reply(t)
         await asyncio.sleep(0.25)
-        await txxt.edit_text("ριиgιиg.....")
+        await txxt.edit_text("✦ Yᴜ̈ᴋʟᴇɴɪʏᴏʀ..")
         await asyncio.sleep(0.35)
         await txxt.delete()
         end = datetime.now()
