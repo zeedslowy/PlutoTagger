@@ -77,7 +77,7 @@ PNG_BTN = [
      ],
 ]
 SOURCE_BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton('sᴏᴜʀᴄᴇ', url=f"{SOURCE}")]])
-HELP_READ = "**➻ 𝗞𝘂𝗹𝗹𝗮𝗻ı𝗺** /ask <prompt>\n\n  𝗥ü𝘆𝗮𝗻ı𝘇 : `/ask.`\n\n**➻ ᴜsᴀɢᴇ** : /generate <prompt> \nÖ𝗿𝗻𝗲𝗸: `/generate Tumblr Girls Love`  \n\n➻ :**➻ ᴜsᴀɢᴇ /ping 𝗕𝗼𝘁𝘂𝗻 𝗦𝗮𝗴𝗹ı𝗸 𝗦𝗼𝗿𝘂𝗻𝗹𝗮𝗿ı𝗻ı Ö𝗹çü𝗻.**\n\n©️**"
+HELP_READ = "**➻ 𝗞𝘂𝗹𝗹𝗮𝗻ı𝗺 :**  <prompt>\n\n   : `/ask.`\n\n**/generate <prompt> \n `/generate Tumblr Girls Love`  \n\n **➻ /ping 𝗕𝗼𝘁𝘂𝗻 𝗦𝗮𝗴𝗹ı𝗸 𝗦𝗼𝗿𝘂𝗻𝗹𝗮𝗿ı𝗻ı Ö𝗹çü𝗻.**\n\n©️**"
 HELP_BACK = [
      [
            InlineKeyboardButton(text="sᴀʜɪᴘ ", url=f"https://t.me/CerennyFlexQ"),
