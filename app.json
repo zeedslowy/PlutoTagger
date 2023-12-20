@@ -42,14 +42,6 @@
       "description": "Your Support Group without @",
       "required": true
     },
-    "STKR": {
-      "description": "Sticker for start", 
-      "required": true
-    },
-    "START_IMG": {
-      "description": "Start Image For Bot.",
-      "required": true
-    },
     "UPDATE_CHNL": {
       "description": "Your Updates Channel without @",
       "required": true
@@ -62,5 +54,5 @@
       "required": true
     }
   },
-  "repository": "https://github.com/noob-mukesh/Chatgpt-bot"
+  "repository": "https://github.com/zeedslowy/ChatGpt"
 }
