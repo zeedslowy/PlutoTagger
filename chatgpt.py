@@ -56,9 +56,6 @@ MAIN = [
     [
         InlineKeyboardButton(text="ʏᴀʀᴅıᴍ & ᴋᴏᴍᴜᴛʟᴀʀ", callback_data="HELP"),
     ],
-    [
-        InlineKeyboardButton(text="ᴋᴀʏɴᴀᴋ", url=f"{SOURCE}"),
-    ],
 ]
 X = [
     [ 
