@@ -34,10 +34,6 @@
       "description": "telegram bot username here without @",
       "required": true
     },
-    "BOT_NAME": {
-      "description": "Simple Bot-name. Do not use Modified Text..",
-      "required": true
-    },
     "SUPPORT_GRP": {
       "description": "Your Support Group without @",
       "required": true
