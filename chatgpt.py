@@ -177,25 +177,8 @@ async def chat(bot, message):
             await message.reply_text(f"{message.from_user.first_name} ᴀꜱᴋᴇᴅ:\n\n {a} \n\n {BOT_NAME} 💬:-\n\n {x}\n\n✨ {telegram_ping} \n\nʙʏ @{BOT_USERNAME} ", parse_mode=ParseMode.MARKDOWN,reply_markup=InlineKeyboardMarkup(X))
         await message.reply_text(f"**ᴇʀʀᴏʀ: {e} ")
 
-#  bard 
+#  cloud
 
-'''bard = Bard(token=BARD_TOKEN)   
-@Mukesh.on_message(filters.command("bard"))
-async def bard_bot(bot, message):
-    try:
-        start_time = time.time()
-        await bot.send_chat_action(message.chat.id, ChatAction.TYPING)
-        if len(message.command) < 2:
-            await message.reply_text(
-            "Example:**\n\n` /bard How r u? `")
-        else:
-            a = message.text.split(' ', 1)[1]
-            response=bard.get_answer(f"{a}")["content"]
-            await message.reply_text(f"{response}\n\n🎉ᴘᴏᴡᴇʀᴇᴅ ʙʏ @{BOT_USERNAME} ", parse_mode=ParseMode.MARKDOWN,reply_markup=InlineKeyboardMarkup(X))     
-    except Exception as e:
-        await message.reply_text(f"**ᴇʀʀᴏʀ:  {e} ")
-
-    '''
 openai.api_key = OPENAI_KEY
 @Mukesh.on_message(filters.command(["image","photo","img","generate"],  prefixes=["+", ".", "/", "-", "?", "$","#","&"] ))
 async def chat(bot, message):
