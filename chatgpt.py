@@ -80,7 +80,7 @@ PNG_BTN = [
      ],
 ]
 SOURCE_BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton('sᴏᴜʀᴄᴇ', url=f"{SOURCE}")]])
-HELP_READ = "**➻𝗞𝘂𝗹𝗹𝗮𝗻ı𝗺 ** /chatgpt <prompt>\n\n ᴇxᴀᴍᴘʟᴇ: `/chatgpt write a simple flask app in python.`\n\n**➻ ᴜsᴀɢᴇ** : /generate <prompt> \nᴇxᴀᴍᴘʟᴇ: `/generate a cute girl photo`  \n\n➻ ᴜsᴀɢᴇ /lyrics : ʀᴇᴘʟʏ ᴛᴏ ᴀᴜᴅɪᴏ ꜰɪʟᴇ ᴛᴏ ᴅᴇᴛᴇᴄᴛ ʟʏʀɪᴄꜱ**➻ ᴜsᴀɢᴇ /ping ᴛᴏ ᴄʜᴇᴄᴋ ᴛʜᴇ ᴘɪɴɢ ᴏғ ᴛʜᴇ ʙᴏᴛ.**\n\n©️**"
+HELP_READ = "**➻𝗞𝘂𝗹𝗹𝗮𝗻ı𝗺 ** <prompt>\n\n `/chatgpt -  𝐒𝐨𝐫𝐮𝐧𝐮𝐳 ❓`\n\n**/generate 𝗚ö𝗿𝘀𝗲𝗹 𝗔𝗿𝗮𝗺𝗮 🔅\n\n/ping - 𝗕𝗼𝘁𝘂𝗻 Ç𝗮𝗹ış𝗺𝗮 𝗦𝗮ğ𝗹ığı𝗻ı 𝗧𝗲𝘀𝘁 𝗘𝗱𝗶𝗻 ❤️‍🔥.**\n\n©️**"
 HELP_BACK = [
      [
            InlineKeyboardButton(text="sᴀʜɪᴘ ", url=f"https://t.me/{OWNER_USERNAME}"),
@@ -174,8 +174,7 @@ async def chat(bot, message):
             x=resp['choices'][0]["message"]["content"]
             end_time = time.time()
             telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ᴍs"
-            await message.reply_text(f"{message.from_user.first_name} ᴀꜱᴋᴇᴅ:\n\n {a} \n\n {BOT_NAME} ᴀɴꜱᴡᴇʀᴇᴅ:-\n\n {x}\n\n✨ᴛɪᴍᴇ ᴛᴀᴋᴇɴ  {telegram_ping} \n\n🎉ᴘᴏᴡᴇʀᴇᴅ ʙʏ @{BOT_USERNAME} ", parse_mode=ParseMode.MARKDOWN,reply_markup=InlineKeyboardMarkup(X))     
-    except Exception as e:
+            await message.reply_text(f"{message.from_user.first_name} \n\n {a} \n\n :-\n\n {x}\n\n:
         await message.reply_text(f"**ᴇʀʀᴏʀ: {e} ")
 
 #  bard 
@@ -205,7 +204,7 @@ async def chat(bot, message):
         await bot.send_chat_action(message.chat.id, ChatAction.UPLOAD_PHOTO)
         if len(message.command) < 2:
             await message.reply_text(
-            "**Example:**\n\n`/generate a white siamese cat`")
+            "**ᴋᴜʟʟᴀɴıᴍ:**\n\n`/generate [ 𝗥ü𝘆𝗮𝗻ı𝘇 ] ")
         else:
             a = message.text.split(' ', 1)[1]
             response= openai.Image.create(prompt=a ,n=1,size="1024x1024")
