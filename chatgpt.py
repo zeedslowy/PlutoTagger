@@ -77,10 +77,10 @@ PNG_BTN = [
      ],
 ]
 SOURCE_BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton('sᴏᴜʀᴄᴇ', url=f"{SOURCE}")]])
-HELP_READ = "**➻ 𝗞𝘂𝗹𝗹𝗮𝗻ı𝗺 :**  \n\n/generate  𝗥ü𝘆𝗮𝗻ı𝘇 🔅\n\n/ping 𝗕𝗼𝘁𝘂𝗻 𝗦𝗮𝗴𝗹ı𝗸 𝗦𝗼𝗿𝘂𝗻𝗹𝗮𝗿ı𝗻ı Ö𝗹çü𝗻 💎\n\n/ask 𝗦𝗼𝗿𝘂𝗻𝘂𝘇 ❓"
+HELP_READ = "**➻ 𝗞𝘂𝗹𝗹𝗮𝗻ı𝗺 :**  \n\n/generate  𝗥ü𝘆𝗮𝗻ı𝘇 🔅\n\n/ping 𝗕𝗼𝘁𝘂𝗻 𝗦𝗮ğ𝗹ı𝗸 𝗦𝗼𝗿𝘂𝗻𝗹𝗮𝗿ı𝗻ı 𝗧𝗲𝘀𝘁 𝗘𝗱𝗶𝗻  💎\n\n/ask 𝗦𝗼𝗿𝘂𝗻𝘂𝘇 ❓"
 HELP_BACK = [
      [
-           InlineKeyboardButton(text="sᴀʜɪᴘ ", url=f"https://t.me/CerennyFlexQ"),
+           InlineKeyboardButton(text="sᴀʜɪᴘ ", url=f"https://t.me/{OWNER_USERNAME}"),
            
      ],
     [
@@ -148,7 +148,7 @@ async def ping(client, message: Message):
         ms = (end-start).microseconds / 1000
         await message.reply_photo(
                              photo=START_IMG,
-                             caption=f"ʜᴇʏ !!\n**[{BOT_NAME}](t.me/{BOT_USERNAME}) ɪ̇ʟᴇᴛɪşɪᴍ ᴠᴇ öɴᴇʀɪ \n➥ `{ms}` ms\n\n**ᴍᴀᴅᴇ ᴡɪᴛʜ ❣️ ʙʏ || [sᴀʜɪᴘ](https://t.me/{OWNER_USERNAME})||",
+                             caption=f"ʜᴇʏ !!\n**[{BOT_NAME}](t.me/{BOT_USERNAME}) ɪ̇ʟᴇᴛɪşɪᴍ ᴠᴇ öɴᴇʀɪ \n➥ `{ms}` ms\n\n**🌹 || [sᴀʜɪᴘ](https://t.me/{OWNER_USERNAME})||",
                              reply_markup=InlineKeyboardMarkup(PNG_BTN),
        )
 
