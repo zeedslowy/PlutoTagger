@@ -37,11 +37,9 @@ sᴀğʟıᴋ sᴏʀᴜɴʟᴀʀıɴı ᴛᴇsᴛ ᴇᴛ
   </a>  </h2>
   ━━━━━━━━━━━━━━━━━
 
- <h4>ʜᴇʀᴏᴋᴜ ᴋᴜʀᴜʟᴜᴍ 🚀</h4>
+ ## ʜᴇʀᴏᴋᴜ ᴋᴜʀᴜʟᴜᴍ 🚀</h4>
 <pre><i></i></pre>
 <p align="center"><a href="https://heroku.com/deploy?template=https://github.com/Noob-mukesh/chatgpt-bot"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-black?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
-
-<details>
  
 <summary><h3>
 
