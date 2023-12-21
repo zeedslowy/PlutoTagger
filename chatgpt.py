@@ -77,7 +77,7 @@ PNG_BTN = [
      ],
 ]
 SOURCE_BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton('sᴏᴜʀᴄᴇ', url=f"{SOURCE}")]])
-HELP_READ = "**➻ 𝗞𝘂𝗹𝗹𝗮𝗻ı𝗺 :**  \n\n/generate  𝗥ü𝘆𝗮𝗻ı𝘇 🔅\n\n **➻ /ping 𝗕𝗼𝘁𝘂𝗻 𝗦𝗮𝗴𝗹ı𝗸 𝗦𝗼𝗿𝘂𝗻𝗹𝗮𝗿ı𝗻ı Ö𝗹çü𝗻\n\n **➻ /ask 𝗦𝗼𝗿𝘂𝗻𝘂𝘇 ❓"
+HELP_READ = "**➻ 𝗞𝘂𝗹𝗹𝗮𝗻ı𝗺 :**  \n\n➻ /generate  𝗥ü𝘆𝗮𝗻ı𝘇 🔅\n\n **➻ /ping 𝗕𝗼𝘁𝘂𝗻 𝗦𝗮𝗴𝗹ı𝗸 𝗦𝗼𝗿𝘂𝗻𝗹𝗮𝗿ı𝗻ı Ö𝗹çü𝗻 💎\n\n **➻ /ask 𝗦𝗼𝗿𝘂𝗻𝘂𝘇 ❓"
 HELP_BACK = [
      [
            InlineKeyboardButton(text="sᴀʜɪᴘ ", url=f"https://t.me/CerennyFlexQ"),
@@ -138,7 +138,7 @@ async def source(bot, m):
 @Mukesh.on_message(filters.command(["ping","alive"], prefixes=["+", "/", "-", "?", "$", "&","."]))
 async def ping(client, message: Message):
         start = datetime.now()
-        t = "ριиgιиg..."
+        t = "✦ Yᴜ̈ᴋʟᴇɴɪʏᴏʀ.."
         txxt = await message.reply(t)
         await asyncio.sleep(0.25)
         await txxt.edit_text("✦ Yᴜ̈ᴋʟᴇɴɪʏᴏʀ..")
@@ -148,7 +148,7 @@ async def ping(client, message: Message):
         ms = (end-start).microseconds / 1000
         await message.reply_photo(
                              photo=START_IMG,
-                             caption=f"ʜᴇʏ ʙᴀʙʏ!!\n**[{BOT_NAME}](t.me/{BOT_USERNAME}) ɪꜱ ᴀʟɪᴠᴇ 🥀 ᴀɴᴅ ᴡᴏʀᴋɪɴɢ ꜰɪɴᴇ ᴡɪᴛʜ ᴘᴏɴɢ ᴏꜰ \n➥ `{ms}` ms\n\n**ᴍᴀᴅᴇ ᴡɪᴛʜ ❣️ ʙʏ || [ᴍᴜᴋᴇsʜ](https://t.me/legend_coder)||",
+                             caption=f"ʜᴇʏ !!\n**[{BOT_NAME}](t.me/{BOT_USERNAME}) ɪ̇ʟᴇᴛɪşɪᴍ ᴠᴇ öɴᴇʀɪ \n➥ `{ms}` ms\n\n**ᴍᴀᴅᴇ ᴡɪᴛʜ ❣️ ʙʏ || [sᴀʜɪᴘ](https://t.me/{OWNER_USERNAME})||",
                              reply_markup=InlineKeyboardMarkup(PNG_BTN),
        )
 
@@ -162,7 +162,7 @@ async def chat(bot, message):
         await bot.send_chat_action(message.chat.id, ChatAction.TYPING)
         if len(message.command) < 2:
             await message.reply_text(
-            "Kullanım:**\n\n`/chatgpt Bugün Günlerden Nedir ?`")
+            "𝗞𝘂𝗹𝗹𝗮𝗻ı𝗺:**\n\n`/chatgpt ʙᴜɢüɴ ɢüɴʟᴇʀᴅᴇɴ ɴᴇᴅɪʀ ?`")
         else:
             a = message.text.split(' ', 1)[1]
             MODEL = "gpt-3.5-turbo"
@@ -171,7 +171,7 @@ async def chat(bot, message):
             x=resp['choices'][0]["message"]["content"]
             end_time = time.time()
             telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ᴍs"
-            await message.reply_text(f"{message.from_user.first_name} 💬:\n\n {a} \n\n {BOT_NAME} \n\n {x}\n\n✨  {telegram_ping} \n\n🎉 ʙʏ ", parse_mode=ParseMode.MARKDOWN,reply_markup=InlineKeyboardMarkup(X))     
+            await message.reply_text(f"{message.from_user.first_name} 💬:\n\n {a} \n\n {BOT_NAME} \n\n {x}\n\n✨  {telegram_ping} \n\n🎉 ", parse_mode=ParseMode.MARKDOWN,reply_markup=InlineKeyboardMarkup(X))     
     except Exception as e:
         await message.reply_text(f"**ᴇʀʀᴏʀ: {e} ")
 
