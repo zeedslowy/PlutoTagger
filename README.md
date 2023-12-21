@@ -18,7 +18,7 @@
 /ping - ʙᴏᴛᴜɴ 
 sᴀğʟıᴋ sᴏʀᴜɴʟᴀʀıɴı ᴛᴇsᴛ ᴇᴛ
 ```
- ━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━
 <h3> ᴋɪᴍʟɪᴋ ᴅᴏğʀᴜʟᴀᴍᴀ </h3>
 <h2> ᴏᴘᴇɴ ᴀɪ - ᴀᴘɪ ᴀɴᴀʜᴛᴀʀ </h2>
 ᴛᴏᴋᴇɴ ᴏʟᴜşᴛᴜʀᴜɴ :  https://platform.openai.com/account/api-keys
@@ -30,17 +30,17 @@ sᴀğʟıᴋ sᴏʀᴜɴʟᴀʀıɴı ᴛᴇsᴛ ᴇᴛ
 3.ꜱᴇꜱꜱɪᴏɴ: ɢᴏ ᴛᴏ ᴀᴘᴘʟɪᴄᴀᴛɪᴏɴ → ᴄᴏᴏᴋɪᴇꜱ → <br>
 4 ꜰɪɴᴅ .__Secure-1PSID <br>
 5. ᴅᴇğᴇʀɪ ᴋᴏᴘʏᴀʟᴀʏıɴıᴢ<br>
- ━━━━━━━━━━━━━━━━━━
-<h3> ᴋᴜʀᴜʟᴜᴍ ᴠɪᴅᴇᴏ |🇬🇧 </h3>
-<h2> <a href="https://youtu.be/Onq2zNgVQ-U"><img alt="YouTube Video Views" src="https://img.shields.io/youtube/views/Onq2zNgVQ-U",width="500" height="70">
-  </a>  </h2>
-  ━━━━━━━━━━━━━━━━━
 
- <h3 align="center">
+<h3 align="center">
     ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ 」─
 </h3>
 
 <p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/zeedslowy/CerenAi"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-black?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
+ 
+━━━━━━━━━━━━━━━━━━
+<h3> ᴋᴜʀᴜʟᴜᴍ ᴠɪᴅᴇᴏ |🇬🇧 </h3>
+<h2> <a href="https://youtu.be/Onq2zNgVQ-U"><img alt="YouTube Video Views" src="https://img.shields.io/youtube/views/Onq2zNgVQ-U",width="500" height="70">
+  </a>  </h2>
  
 <summary><h3>
 
