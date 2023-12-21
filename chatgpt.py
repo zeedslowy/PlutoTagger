@@ -195,21 +195,21 @@ async def bard_bot(bot, message):
 
     '''
 openai.api_key = OPENAI_KEY
-@Mukesh.on_message(filters.command(["image","photo","img","generate"],  prefixes=["+", ".", "/", "-", "?", "$","#","&"] ))
+@Mukesh.on_message(filters.command(["image","photo","img","dream"],  prefixes=["+", ".", "/", "-", "?", "$","#","&"] ))
 async def chat(bot, message):
     try:
         start_time = time.time()
         await bot.send_chat_action(message.chat.id, ChatAction.UPLOAD_PHOTO)
         if len(message.command) < 2:
             await message.reply_text(
-            "**Example:**\n\n`/generate a white siamese cat`")
+            "**𝗞𝘂𝗹𝗹𝗮𝗻ı𝗺 :**\n\n`/dream 𝑻𝒖𝒎𝒃𝒍𝒓 𝑺𝒆𝒗𝒈𝒊𝒍𝒊 𝑮ü𝒏ü`")
         else:
             a = message.text.split(' ', 1)[1]
             response= openai.Image.create(prompt=a ,n=1,size="1024x1024")
             image_url = response['data'][0]['url']
             end_time = time.time()
             telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ᴍs"
-            await message.reply_photo(image_url,caption=f"✨ᴛɪᴍᴇ ᴛᴀᴋᴇɴ {telegram_ping} ",parse_mode=ParseMode.DISABLED,reply_markup=InlineKeyboardMarkup(X)) 
+            await message.reply_photo(image_url,caption=f"✨ {telegram_ping} ",parse_mode=ParseMode.DISABLED,reply_markup=InlineKeyboardMarkup(X)) 
     except Exception as e:
             await message.reply_text(f"**ᴇʀʀᴏʀ: **  ` {e} `")
 openai.api_key = OPENAI_KEY
