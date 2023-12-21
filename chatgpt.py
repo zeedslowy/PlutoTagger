@@ -80,11 +80,11 @@ SOURCE_BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton('sᴏᴜʀᴄᴇ', 
 HELP_READ = "**➻ 𝗞𝘂𝗹𝗹𝗮𝗻ı𝗺 :**  \n\n/dream  𝗥ü𝘆𝗮𝗻ı𝘇 🔅\n\n/ask 𝗦𝗼𝗿𝘂𝗻𝘂𝘇 ❓\n\n/ping 𝗕𝗼𝘁𝘂𝗻 𝗦𝗮ğ𝗹ı𝗸 𝗦𝗼𝗿𝘂𝗻𝗹𝗮𝗿ı𝗻ı 𝗧𝗲𝘀𝘁 𝗘𝗱𝗶𝗻 💎"
 HELP_BACK = [
      [
-           InlineKeyboardButton(text="sᴀʜɪᴘ ", url=f"https://t.me/{OWNER_USERNAME}"),
+           InlineKeyboardButton(text="ᴋᴀʏɴᴀᴋ ", url=f"https://github.com/zeedslowy/ChatGpt"),
            
      ],
     [
-           InlineKeyboardButton(text="ʙᴀᴄᴋ ", callback_data="HELP_BACK"),
+           InlineKeyboardButton(text="⬅️ ", callback_data="HELP_BACK"),
     ],
 ]
 
