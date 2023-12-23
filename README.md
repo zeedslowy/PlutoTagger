@@ -41,16 +41,6 @@ sᴀğʟıᴋ sᴏʀᴜɴʟᴀʀıɴı ᴛᴇsᴛ ᴇᴛ
 <h3> ᴋᴜʀᴜʟᴜᴍ ᴠɪᴅᴇᴏ |🇬🇧 </h3>
 <h2> <a href="https://youtu.be/Onq2zNgVQ-U"><img alt="YouTube Video Views" src="https://img.shields.io/youtube/views/Onq2zNgVQ-U",width="500" height="70">
   </a>  </h2>
- 
-<summary><h3>
-
-<i>sᴀᴍᴘʟᴇ ʙᴏᴛ ɪs ɢɪᴠᴇɴ ʙᴇʟᴏᴡ, ʏᴏᴜ ᴄᴀɴ ᴄʜᴇᴀᴋ ᴛʜᴀᴛ.</i>
-<details>
-<summary>sᴀᴍᴘʟᴇ ʙᴏᴛ✨</summary>
-<i> ᴀʟʟ ᴛʜᴇ ᴄᴜsᴛᴏᴍɪsᴀᴛɪᴏɴs ʟɪᴋᴇ ᴅɪғғᴇʀᴇɴᴛ sᴛᴀʀᴛ ɪᴍᴀɢᴇs ᴀɴᴅ ᴅɪғғᴇʀᴇɴᴛ sᴛɪᴄᴋᴇʀs ᴀʀᴇ ᴀᴠᴀɪʟᴀʙʟᴇ. ᴢsᴛ ᴄʜᴇᴀᴋ ᴛʜᴇ ᴠᴀʀs ᴀɴᴅ ғᴏʀᴋ ᴛʜᴇ ʀᴇᴘᴏsɪᴛᴏʀʏ.</i>
-<p align="center"><a href="https://t.me/CHATGPTAI_TG_BOT"> <img src="https://img.shields.io/badge/Sample%20Bot-pink?style=for-the-badge" width="220" height="38.45"/></a></p>
-</details>
-
 
 ### ʜᴀᴋᴋıᴍıᴢᴅᴀ ❓
 
