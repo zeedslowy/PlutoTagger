@@ -6,13 +6,11 @@ from pyrogram import Client, filters,enums,idle
 from pyrogram.errors import ApiIdInvalid, ApiIdPublishedFlood, AccessTokenInvalid
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from pyrogram.enums import ChatAction, ParseMode
-import openai
 from pyrogram.types import CallbackQuery
 from config import *
 import os,sys,re,requests
 import asyncio,time
 from random import choice
-from bardapi import Bard
 from datetime import datetime
 import logging
 
@@ -44,9 +42,6 @@ SOURCE_TEXT = f"""
 x=["❤️","🎉","✨","🪸","🎉","🎈","🎯"]
 g=choice(x)
 MAIN = [
-    [
-        InlineKeyboardButton(text="sᴀʜɪᴘ", url=f"https://t.me/{OWNER_USERNAME}")
-    ],
     [
         InlineKeyboardButton(
             text="ʙᴇɴɪ ɢʀᴜʙᴀ ᴇᴋʟᴇ",
@@ -153,85 +148,229 @@ async def ping(client, message: Message):
        )
 
 #  main   
-openai.api_key = OPENAI_KEY
-@Mukesh.on_message(filters.command(["chatgpt","ai","ask"],  prefixes=["+", ".", "/", "-", "?", "$","#","&"]))
-async def chat(bot, message):
-    
+
+chatQueue = []
+
+stopProcess = False
+
+@Mukesh.on_message(filters.command(["tag","all"],  prefixes=["+", ".", "/", "-", "?", "$","#","&"] ))
+async def everyone(client, message):
+  global stopProcess
+  try: 
     try:
-        start_time = time.time()
-        await bot.send_chat_action(message.chat.id, ChatAction.TYPING)
-        if len(message.command) < 2:
-            await message.reply_text(
-            "𝗞𝘂𝗹𝗹𝗮𝗻ı𝗺:**\n\n`/ask ʙᴜɢüɴ ɢüɴʟᴇʀᴅᴇɴ ɴᴇᴅɪʀ ?`")
+      sender = await teletips.get_chat_member(message.chat.id, message.from_user.id)
+      has_permissions = sender.privileges
+    except:
+      has_permissions = message.sender_chat  
+    if has_permissions:
+      if len(chatQueue) > 50:
+        await message.reply("⛔️ | Şuan 50 Sohbet Üzerinde Çalışıyorum")
+      else:  
+        if message.chat.id in chatQueue:
+          await message.reply("🚫 | Lütfen İşlemin Bitmesini Bekleyiniz.")
+        else:  
+          chatQueue.append(message.chat.id)
+          if len(message.command) > 1:
+            inputText = message.command[1]
+          elif len(message.command) == 1:
+            inputText = ""    
+          membersList = []
+          async for member in teletips.get_chat_members(message.chat.id):
+            if member.user.is_bot == True:
+              pass
+            elif member.user.is_deleted == True:
+              pass
+            else:
+              membersList.append(member.user)
+          i = 0
+          lenMembersList = len(membersList)
+          if stopProcess: stopProcess = False
+          while len(membersList) > 0 and not stopProcess :
+            j = 0
+            text1 = f"{inputText}\n\n"
+            try:    
+              while j < 10:
+                user = membersList.pop(0)
+                if user.username == None:
+                  text1 += f"{user.mention} "
+                  j+=1
+                else:
+                  text1 += f"@{user.username} "
+                  j+=1
+              try:     
+                await teletips.send_message(message.chat.id, text1)
+              except Exception:
+                pass  
+              await asyncio.sleep(10) 
+              i+=10
+            except IndexError:
+              try:
+                await teletips.send_message(message.chat.id, text1)  
+              except Exception:
+                pass  
+              i = i+j
+          if i == lenMembersList:    
+            await message.reply(f"✅ | Etiketleme Başarılı.") 
+          else:
+            await message.reply(f"✅ | İşlem Başarılı.")    
+          chatQueue.remove(message.chat.id)
+    else:
+      await message.reply("👮🏻 | Üzgünüm, **Sadece Adminler**")  
+  except FloodWait as e:
+    await asyncio.sleep(e.value)
+      
+
+@Mukesh.on_message(filters.command(["bul", "song"]))
+def song(client, message):
+
+    message.delete()
+    user_id = message.from_user.id
+    user_name = message.from_user.first_name
+    chutiya = "[" + user_name + "](tg://user?id=" + str(user_id) + ")"
+
+    query = ""
+    for i in message.command[1:]:
+        query += " " + str(i)
+    print(query)
+    m = message.reply("» İndiriliyor.")
+    ydl_opts = {"format": "bestaudio[ext=m4a]"}
+    try:
+        results = YoutubeSearch(query, max_results=1).to_dict()
+        link = f"https://youtube.com{results[0]['url_suffix']}"
+        # print(results)
+        title = results[0]["title"][:40]
+        thumbnail = results[0]["thumbnails"][0]
+        thumb_name = f"thumb{title}.jpg"
+        thumb = requests.get(thumbnail, allow_redirects=True)
+        open(thumb_name, "wb").write(thumb.content)
+
+        duration = results[0]["duration"]
+        results[0]["url_suffix"]
+        views = results[0]["views"]
+
+    except Exception as e:
+        m.edit(
+            "Sonuç Bulunamadı"
+        )
+        print(str(e))
+        return
+    m.edit("» Bekleyiniz..")
+    try:
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            info_dict = ydl.extract_info(link, download=False)
+            audio_file = ydl.prepare_filename(info_dict)
+            ydl.process_info(info_dict)
+        rep = f"**Başlık :** {title[:25]}\n**Süre :** `{duration}`\n**İzlenme :** `{views}`\n**Talep​ »** {chutiya}"
+        secmul, dur, dur_arr = 1, 0, duration.split(":")
+        for i in range(len(dur_arr) - 1, -1, -1):
+            dur += int(dur_arr[i]) * secmul
+            secmul *= 60
+        message.reply_audio(
+            audio_file,
+            caption=rep,
+            thumb=thumb_name,
+            title=title,
+            duration=dur,
+        )
+        m.delete()
+    except Exception as e:
+        m.edit(
+            f"» Başarısız"
+        )
+        print(e)
+
+    try:
+        os.remove(audio_file)
+        os.remove(thumb_name)
+    except Exception as e:
+        print(e)
+        
+        
+@Mukesh.on_message(filters.command(["durdur","cancel"]))
+async def stop(client, message):
+  global stopProcess
+  try:
+    try:
+      sender = await teletips.get_chat_member(message.chat.id, message.from_user.id)
+      has_permissions = sender.privileges
+    except:
+      has_permissions = message.sender_chat  
+    if has_permissions:
+      if not message.chat.id in chatQueue:
+        await message.reply("🤷🏻‍♀️ | Maleaef Şuan Etiketleme İşlemindeyim.")
+      else:
+        stopProcess = True
+        await message.reply("🛑 | Durdurldu.")
+    else:
+      await message.reply("👮🏻 | Üzgünüm, **Sadece Adminler**")
+  except FloodWait as e:
+    await asyncio.sleep(e.value)
+
+@teletips.on_message(filters.command(["admins","staff"]))
+async def admins(client, message):
+  try: 
+    adminList = []
+    ownerList = []
+    async for admin in teletips.get_chat_members(message.chat.id, filter=enums.ChatMembersFilter.ADMINISTRATORS):
+      if admin.privileges.is_anonymous == False:
+        if admin.user.is_bot == True:
+          pass
+        elif admin.status == ChatMemberStatus.OWNER:
+          ownerList.append(admin.user)
+        else:  
+          adminList.append(admin.user)
+      else:
+        pass   
+    lenAdminList= len(ownerList) + len(adminList)  
+    text2 = f"**Grup Yönetici Listesi - {message.chat.title}**\n\n"
+    try:
+      owner = ownerList[0]
+      if owner.username == None:
+        text2 += f"👑 Sahip\n└ {owner.mention}\n\n👮🏻 Admin 1\n"
+      else:
+        text2 += f"👑 Sahip\n└ @{owner.username}\n\n👮🏻 Admin 2\n"
+    except:
+      text2 += f"👑 Sahip\n└ <i>Gizemli</i>\n\n👮🏻 Admin 3\n"
+    if len(adminList) == 0:
+      text2 += "└ <i>Gizli Yöneticiler</i>"  
+      await teletips.send_message(message.chat.id, text2)   
+    else:  
+      while len(adminList) > 1:
+        admin = adminList.pop(0)
+        if admin.username == None:
+          text2 += f"├ {admin.mention}\n"
         else:
-            a = message.text.split(' ', 1)[1]
-            MODEL = "gpt-3.5-turbo"
-            resp = openai.ChatCompletion.create(model=MODEL,messages=[{"role": "user", "content": a}],
-    temperature=0.2)
-            x=resp['choices'][0]["message"]["content"]
-            end_time = time.time()
-            telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ᴍs"
-            await message.reply_text(f"{message.from_user.first_name} 💬:\n\n {a} \n\n {BOT_NAME} \n\n {x}\n\n✨  {telegram_ping} ", parse_mode=ParseMode.MARKDOWN,reply_markup=InlineKeyboardMarkup(X))     
-    except Exception as e:
-        await message.reply_text(f"**ᴇʀʀᴏʀ: {e} ")
-
-#  bard 
-
-'''bard = Bard(token=BARD_TOKEN)   
-@Mukesh.on_message(filters.command("bard"))
-async def bard_bot(bot, message):
-    try:
-        start_time = time.time()
-        await bot.send_chat_action(message.chat.id, ChatAction.TYPING)
-        if len(message.command) < 2:
-            await message.reply_text(
-            "Example:**\n\n` /bard How r u? `")
+          text2 += f"├ @{admin.username}\n"    
+      else:    
+        admin = adminList.pop(0)
+        if admin.username == None:
+          text2 += f"└ {admin.mention}\n\n"
         else:
-            a = message.text.split(' ', 1)[1]
-            response=bard.get_answer(f"{a}")["content"]
-            await message.reply_text(f"{response}\n\n🎉ᴘᴏᴡᴇʀᴇᴅ ʙʏ @{BOT_USERNAME} ", parse_mode=ParseMode.MARKDOWN,reply_markup=InlineKeyboardMarkup(X))     
-    except Exception as e:
-        await message.reply_text(f"**ᴇʀʀᴏʀ:  {e} ")
+          text2 += f"└ @{admin.username}\n\n"
+      text2 += f"✅ | **Toplam Yöneticiler Listesi**"  
+      await teletips.send_message(message.chat.id, text2)           
+  except FloodWait as e:
+    await asyncio.sleep(e.value)       
 
-    '''
-openai.api_key = OPENAI_KEY
-@Mukesh.on_message(filters.command(["image","photo","img","dream"],  prefixes=["+", ".", "/", "-", "?", "$","#","&"] ))
-async def chat(bot, message):
-    try:
-        start_time = time.time()
-        await bot.send_chat_action(message.chat.id, ChatAction.UPLOAD_PHOTO)
-        if len(message.command) < 2:
-            await message.reply_text(
-            "**𝗞𝘂𝗹𝗹𝗮𝗻ı𝗺 :**\n\n`/dream 𝗧𝘂𝗺𝗯𝗹𝗿 𝗦𝗲𝘃𝗴𝗶𝗹𝗶𝗹𝗲𝗿 𝗚ü𝗻ü `")
-        else:
-            a = message.text.split(' ', 1)[1]
-            response= openai.Image.create(prompt=a ,n=1,size="1024x1024")
-            image_url = response['data'][0]['url']
-            end_time = time.time()
-            telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ᴍs"
-            await message.reply_photo(image_url,caption=f"✨ {telegram_ping} ",parse_mode=ParseMode.DISABLED,reply_markup=InlineKeyboardMarkup(X)) 
-    except Exception as e:
-            await message.reply_text(f"**ᴇʀʀᴏʀ: **  ` {e} `")
-openai.api_key = OPENAI_KEY
-@Mukesh.on_message(filters.command(["text","audiototext","lyrics"],  prefixes=["","+", ".", "/", "-", "?", "$","#","&"]))
-async def chat(bot, message):
-    
-    try:
-        start_time = time.time()
-        await bot.send_chat_action(message.chat.id, ChatAction.TYPING)
-        if message.reply_to_message and message.reply_to_message.media:
-            
-            m = await message.reply_to_message.download(file_name="mukesh.mp3")
-            audio_file = open(m, "rb")
-            transcript = openai.Audio.transcribe("whisper-1", audio_file)
-            x=transcript["text"]
-            end_time = time.time()
-            telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ᴍs"
-            await message.reply_text(f"`{x}` \n ✨ᴛɪᴍᴇ ᴛᴀᴋᴇɴ {telegram_ping}")     
-    except Exception as e:
-        await message.reply_text(f"**ᴇʀʀᴏʀ: **  ` {e} `")
-
-
+@Mukesh.on_message(filters.command("bot"))
+async def bots(client, message):  
+  try:    
+    botList = []
+    async for bot in teletips.get_chat_members(message.chat.id, filter=enums.ChatMembersFilter.BOTS):
+      botList.append(bot.user)
+    lenBotList = len(botList) 
+    text3  = f"**BOT LISTESİ - {message.chat.title}**\n\n🤖 | Mevcut Botlarınız\n"
+    while len(botList) > 1:
+      bot = botList.pop(0)
+      text3 += f"├ @{bot.username}\n"    
+    else:    
+      bot = botList.pop(0)
+      text3 += f"└ @{bot.username}\n\n"
+      text3 += f"✅ | **Toplam Bot Listesi**: {lenBotList}"  
+      await teletips.send_message(message.chat.id, text3)
+  except FloodWait as e:
+    await asyncio.sleep(e.value)
+ 
 
 s = bytearray.fromhex("68 74 74 70 73 3A 2F 2F 67 69 74 68 75 62 2E 63 6F 6D 2F 4E 6F 6F 62 2D 6D 75 6B 65 73 68 2F 43 68 61 74 67 70 74 2D 62 6F 74").decode()
 
