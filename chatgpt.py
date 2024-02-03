@@ -32,9 +32,9 @@ Mukesh = Client(
 START = f"""
 ʜᴇʏ 
 
-•  sᴏɴ ᴅᴇʀᴇᴄᴇ ɢᴇʟɪ̇şᴍɪ̇ş, ʙɪ̇ʀ ᴄ̧ᴏᴋ ᴏ̈ᴢᴇʟʟɪ̇ɢ̆ᴇ sᴀʜɪ̇ᴘ ʙɪ̇ʀ ʙᴏᴛᴜᴍ !
+sᴏɴ ᴅᴇʀᴇᴄᴇ ɢᴇʟɪ̇şᴍɪ̇ş, ʙɪ̇ʀ ᴄ̧ᴏᴋ ᴏ̈ᴢᴇʟʟɪ̇ɢ̆ᴇ sᴀʜɪ̇ᴘ ʙɪ̇ʀ ʙᴏᴛᴜᴍ !
 
-•  ᴋᴏᴍᴜᴛʟᴀʀ ᴠᴇ ᴅᴇsᴛᴇᴋ ɪ̇ᴄ̧ɪ̇ɴ ᴀşᴀɢ̆ɪᴅᴀᴋɪ̇ ʙᴜᴛᴏɴʟᴀʀɪ ᴋᴜʟʟᴀɴɪɴ !
+ᴋᴏᴍᴜᴛʟᴀʀ ᴠᴇ ᴅᴇsᴛᴇᴋ ɪ̇ᴄ̧ɪ̇ɴ ᴀşᴀɢ̆ɪᴅᴀᴋɪ̇ ʙᴜᴛᴏɴʟᴀʀɪ ᴋᴜʟʟᴀɴɪɴ !
 """
 xa = bytearray.fromhex("68 74 74 70 73 3A 2F 2F 67 69 74 68 75 62 2E 63 6F 6D 2F 4E 6F 6F 62 2D 6D 75 6B 65 73 68 2F 43 68 61 74 67 70 74 2D 62 6F 74").decode()
 SOURCE = xa
@@ -103,8 +103,6 @@ async def start(client, m: Message):
         )
         await asyncio.sleep(0.3)
         await umm.delete()
-        await m.reply_photo(
-            photo = START_IMG,
             caption=START,
             reply_markup=InlineKeyboardMarkup(MAIN),
         )
@@ -125,14 +123,13 @@ async def cb_handler(Client, query: CallbackQuery):
     
 @Mukesh.on_message(filters.command(["help", f"help@{BOT_USERNAME}"], prefixes=["","+", ".", "/", "-", "?", "$"]))
 async def restart(client, message):
-    hmm = await message.reply_photo(START_IMG,
                         caption=HELP_READ,
                         reply_markup= InlineKeyboardMarkup(HELP_BACK),
        )
 @Mukesh.on_message(filters.command(['source', 'repo'], prefixes=["","+", ".", "/", "-", "?", "$"]))
 async def source(bot, m):
     
-    await m.reply_photo(START_IMG, caption=SOURCE_TEXT, reply_markup=SOURCE_BUTTONS)
+    (caption=SOURCE_TEXT, reply_markup=SOURCE_BUTTONS)
 #  alive
 @Mukesh.on_message(filters.command(["ping","alive"], prefixes=["+", "/", "-", "?", "$", "&","."]))
 async def ping(client, message: Message):
@@ -145,8 +142,6 @@ async def ping(client, message: Message):
         await txxt.delete()
         end = datetime.now()
         ms = (end-start).microseconds / 1000
-        await message.reply_photo(
-                             photo=START_IMG,
                              caption=f"ʜᴇʏ !!\n**[{BOT_NAME}](t.me/{BOT_USERNAME}) ɪ̇ʟᴇᴛɪşɪᴍ ᴠᴇ öɴᴇʀɪ \n➥ `{ms}` ms\n\n**🌹 || [sᴀʜɪᴘ](https://t.me/{OWNER_USERNAME})||",
                              reply_markup=InlineKeyboardMarkup(PNG_BTN),
        )
