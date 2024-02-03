@@ -1,19 +1,19 @@
-# ᴄʜᴀᴛɢᴘᴛ + ɢᴏᴏɢʟᴇ ʙᴀʀᴅ 
+# Telegram Tagger V4
 <h4>ʜᴀᴋᴋıɴᴅᴀ!</h4>
-<pre><b>ᴍᴇᴛɪɴ ᴠᴇ ɢöʀsᴇʟ
-üʀᴇᴛᴇʙɪʟᴇɴ ʙɪʀ ʏᴀᴘᴀʏ ᴢᴇᴋᴀ ᴀʀᴀᴄıʏıᴍ </b></pre>
+<pre><b>Etiket Ve Müzik
+Özelliklerine Sahip Bir Botum </b></pre>
 
 
 # 𝗞𝗼𝗺𝘂𝘁𝗹𝗮𝗿📝 
 ```
-/ask - sᴏʀᴜɴᴜᴢᴜɴ 
-ᴄᴇᴠᴀᴘ ɢᴇɴᴇʟʟɪᴋʟᴇ sıɴᴀᴠʟᴀʀᴅᴀ 
-ᴋᴏᴘʏᴀ çᴇᴋᴍᴇᴋ ɪ̇çɪɴ ʙɪʀᴇʙɪʀ
+/tag - Grupta Üyelere
+Etiket Atabilirim
 
-/dream - ɢöʀsᴇʟ 
-üʀᴇᴛᴍᴇᴋ ɪ̇çɪɴ ʙɪʀᴇʙɪʀ 
-ᴍᴇsᴇʟᴀ ʜᴀʏᴀʟ 
-ᴇᴛᴛɪğɪɴɪᴢ ʜᴇʀşᴇʏ
+/admin - Grupta Güncel Adminler
+Listesi
+
+/bul - Youtube Satır İçi Müzik
+Özelliğine Sahipim
 
 /ping - ʙᴏᴛᴜɴ 
 sᴀğʟıᴋ sᴏʀᴜɴʟᴀʀıɴı ᴛᴇsᴛ ᴇᴛ
@@ -35,12 +35,7 @@ sᴀğʟıᴋ sᴏʀᴜɴʟᴀʀıɴı ᴛᴇsᴛ ᴇᴛ
     ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ 」─
 </h3>
 
-<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/zeedslowy/CerenAi"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-black?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
- 
-━━━━━━━━━━━━━━━━━━
-<h3> ᴋᴜʀᴜʟᴜᴍ ᴠɪᴅᴇᴏ |🇬🇧 </h3>
-<h2> <a href="https://youtu.be/Onq2zNgVQ-U"><img alt="YouTube Video Views" src="https://img.shields.io/youtube/views/Onq2zNgVQ-U",width="500" height="70">
-  </a>  </h2>
+<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/zeedslowy/PlutoTagger"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-black?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
 ### ʜᴀᴋᴋıᴍıᴢᴅᴀ ❓
 
