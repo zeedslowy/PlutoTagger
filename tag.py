@@ -365,8 +365,7 @@ async def admins(client, message):
 spam_chats = []
 
 
-@Mukesh.on(events.NewMessage(pattern="^/utag ?(.*)"))
-@Mukesh.on(events.NewMessage(pattern="^@btag ?(.*)"))
+@Mukesh.on_message(filters.command(["btag","tags"]))
 async def mentionall(event):
     chat_id = event.chat_id
     if event.is_private:
