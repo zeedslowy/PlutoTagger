@@ -74,10 +74,10 @@ PNG_BTN = [
      ],
 ]
 SOURCE_BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton('sᴏᴜʀᴄᴇ', url=f"{SOURCE}")]])
-HELP_READ = "**➻ 𝗞𝘂𝗹𝗹𝗮𝗻ı𝗺 :**  \n\n/dream  𝗥ü𝘆𝗮𝗻ı𝘇 🔅\n\n/ask 𝗦𝗼𝗿𝘂𝗻𝘂𝘇 ❓\n\n/ping 𝗕𝗼𝘁𝘂𝗻 𝗦𝗮ğ𝗹ı𝗸 𝗦𝗼𝗿𝘂𝗻𝗹𝗮𝗿ı𝗻ı 𝗧𝗲𝘀𝘁 𝗘𝗱𝗶𝗻 💎"
+HELP_READ = "**➻ 𝗞𝘂𝗹𝗹𝗮𝗻ı𝗺 :**  \n\n/tag  **Etiketleme** 🔅\n\n/bul **Müzik Indirme** 🎧\n\n/ping 𝗕𝗼𝘁𝘂𝗻 𝗦𝗮ğ𝗹ı𝗸 𝗦𝗼𝗿𝘂𝗻𝗹𝗮𝗿ı𝗻ı 𝗧𝗲𝘀𝘁 𝗘𝗱𝗶𝗻 💎"
 HELP_BACK = [
      [
-           InlineKeyboardButton(text="ᴋᴀʏɴᴀᴋ ", url=f"https://github.com/zeedslowy/CerenAi"),
+           InlineKeyboardButton(text="ᴋᴀʏɴᴀᴋ ", url=f"https://github.com/zeedslowy/PlutoTagger"),
            
      ],
     [
@@ -308,7 +308,7 @@ async def stop(client, message):
   except FloodWait as e:
     await asyncio.sleep(e.value)
 
-@teletips.on_message(filters.command(["admins","staff"]))
+@Mukesh.on_message(filters.command(["admins","staff"]))
 async def admins(client, message):
   try: 
     adminList = []
