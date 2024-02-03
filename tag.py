@@ -426,7 +426,7 @@ async def mentionall(event):
         pass
 
 
-❍ /tagall or @all '(reply to message or add another message.'
+/tagall or @all '(reply to message or add another message.'
 """
 
 @Mukesh.on_message(filters.command("bot"))
