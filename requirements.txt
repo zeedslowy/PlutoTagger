@@ -2,6 +2,10 @@ pyrogram
 requests
 dnspython
 tgcrypto
+ffmpeg-python==0.2.0
+yt_dlp
+youtube_search
+youtube_search_python
 asyncio
 
 
