@@ -103,8 +103,6 @@ async def start(client, m: Message):
         )
         await asyncio.sleep(0.3)
         await umm.delete()
-        await m.reply_photo(
-            photo = START_IMG,
             caption=START,
             reply_markup=InlineKeyboardMarkup(MAIN),
         )
@@ -125,7 +123,6 @@ async def cb_handler(Client, query: CallbackQuery):
     
 @Mukesh.on_message(filters.command(["help", f"help@{BOT_USERNAME}"], prefixes=["","+", ".", "/", "-", "?", "$"]))
 async def restart(client, message):
-    hmm = await message.reply_photo(START_IMG,
                         caption=HELP_READ,
                         reply_markup= InlineKeyboardMarkup(HELP_BACK),
        )
