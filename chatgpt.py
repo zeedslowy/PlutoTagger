@@ -8,6 +8,8 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from pyrogram.enums import ChatAction, ParseMode
 from pyrogram.types import CallbackQuery
 from config import *
+import yt_dlp
+from youtube_search import YoutubeSearch
 import os,sys,re,requests
 import asyncio,time
 from random import choice
